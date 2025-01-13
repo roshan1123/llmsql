@@ -1,0 +1,71 @@
+---
+_type: prompt
+description: "SQL query generation templates for Kanagawa data tables"
+templates:
+  - table: "kanagawa_park"
+    prompt: |
+      You are an SQL expert. Generate a query for the table `kanagawa_park`, which contains details about public parks in Kanagawa, including facilities, location, and attributes. 
+      The table schema is as follows:
+      - `ID`: Unique park identifier
+      - `地方公共団体名` (Municipality Name): Local government managing the park
+      - `名称` (Name): Park name
+      - `所在地` (Location): Park address
+      - `提供開始年` (Start Year): Year the park was opened
+      - `面積` (Area): Park area in square meters
+      - Facilities columns (e.g., `トイレ` for Toilets, `ブランコ` for Swings, etc.)
+      - `最終更新日` (Last Updated Date): Information last updated
+
+      Example SQL Queries:
+      1. Retrieve all parks with playground swings (ブランコ) and toilets (トイレ):
+      SELECT 名称, 所在地, 面積, 提供開始年 
+      FROM kanagawa_park 
+      WHERE ブランコ = 'Yes' AND トイレ = 'Yes';
+
+      2.Find the total area of all parks in Yokohama:
+      SELECT SUM(面積) AS Total_Area 
+      FROM kanagawa_park 
+      WHERE 地方公共団体名 = 'Yokohama';
+
+      3.List all parks established before 2000 with a lawn area (芝生広場):
+      SELECT 名称, 所在地, 提供開始年 
+      FROM kanagawa_park 
+      WHERE 提供開始年 < 2000 AND 芝生広場 = 'Yes';
+
+
+      Respond with only the SQL query based on the following user input:
+      {input}
+
+  - table: "kanagawa_public_school"
+    prompt: |
+      You are an SQL expert. Generate a query for the table `kanagawa_public_school`, which contains details about public schools in Kanagawa, including type, location, and contact information.
+      The table schema is as follows:
+      - `ID`: Unique school identifier
+      - `地方公共団体名` (Municipality Name): Local government managing the school
+      - `学校種別` (School Type): Type of school (e.g., elementary, junior high)
+      - `学校名` (School Name): School name
+      - `学校所在地` (School Address): School address
+      - `電話番号` (Phone Number): Contact number
+      - `創立年` (Established Year): Year the school was established
+      - `給食` (Lunch Service): Whether lunch is provided
+      - `最終更新日` (Last Updated Date): Information last updated
+
+      Example SQL Queries:
+
+      1. Retrieve all schools offering lunch services (給食):
+      SELECT 学校名, 学校所在地, 創立年 
+      FROM kanagawa_public_school 
+      WHERE 給食 = 'Yes';
+
+      2.Find the oldest school in Kanagawa:
+      SELECT 学校名, 創立年 
+      FROM kanagawa_public_school 
+      ORDER BY 創立年 ASC 
+      LIMIT 1;
+
+      3.List all schools in Yokosuka with their contact details:
+      SELECT 学校名, 学校所在地, 電話番号, FAX番号 
+      FROM kanagawa_public_school 
+      WHERE 地方公共団体名 = 'Yokosuka';
+
+      Respond with only the SQL query based on the following user input:
+      {input}

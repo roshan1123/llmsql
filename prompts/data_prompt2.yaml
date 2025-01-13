@@ -1,0 +1,79 @@
+description: "SQL query generation templates for Kanagawa data tables"
+templates:
+  - _type: prompt
+    input_variables:
+      - input
+    template: |
+      テーブル定義は以下となります。
+      kanagawa_park (
+        ID varchar(6) DEFAULT NULL,
+        Local_Government_Name varchar(7) DEFAULT NULL,
+        Park_Name varchar(29) DEFAULT NULL,
+        Address varchar(44) DEFAULT NULL,
+        Start_Year varchar(5) DEFAULT NULL,
+        Area varchar(20) DEFAULT NULL,
+        Park_Type varchar(24) DEFAULT NULL,
+        Toilets varchar(3) DEFAULT NULL,
+        Accessible_Toilets varchar(6) DEFAULT NULL,
+        Drinking_Water varchar(7) DEFAULT NULL,
+        Play_Equipment_Spring_Swing varchar(14) DEFAULT NULL,
+        Sandbox varchar(2) DEFAULT NULL,
+        Composite_Play_Equipment varchar(4) DEFAULT NULL,
+        Fitness_Equipment varchar(4) DEFAULT NULL,
+        Swings varchar(4) DEFAULT NULL,
+        Slides varchar(4) DEFAULT NULL,
+        Jungle_Gym varchar(7) DEFAULT NULL,
+        Horizontal_Bars varchar(2) DEFAULT NULL,
+        Seesaw varchar(4) DEFAULT NULL,
+        Tarzan_Rope varchar(7) DEFAULT NULL,
+        Roller_Slide varchar(9) DEFAULT NULL,
+        Bouncy_Dome varchar(7) DEFAULT NULL,
+        Lawn_Area varchar(4) DEFAULT NULL,
+        Water_Play_Area varchar(3) DEFAULT NULL,
+        Running_Track varchar(8) DEFAULT NULL,
+        Tennis_Courts varchar(6) DEFAULT NULL,
+        Basketball_Hoops varchar(8) DEFAULT NULL,
+        Baseball_Field varchar(3) DEFAULT NULL,
+        Futsal_Field varchar(6) DEFAULT NULL,
+        Soccer_Field varchar(5) DEFAULT NULL,
+        Skate_Park varchar(7) DEFAULT NULL,
+        Swimming_Pool varchar(3) DEFAULT NULL,
+        Gymnasium varchar(3) DEFAULT NULL,
+        Track_Field varchar(5) DEFAULT NULL,
+        Animals_Small varchar(9) DEFAULT NULL,
+        Hamsters varchar(5) DEFAULT NULL,
+        Chicks varchar(3) DEFAULT NULL,
+        Ponies varchar(5) DEFAULT NULL,
+        Cafeteria varchar(8) DEFAULT NULL,
+        Shops varchar(6) DEFAULT NULL,
+        Vending_Machines varchar(8) DEFAULT NULL,
+        BBQ_Area varchar(10) DEFAULT NULL,
+        Dog_Run varchar(5) DEFAULT NULL,
+        Smoking_Area varchar(7) DEFAULT NULL,
+        Event_Plaza varchar(15) DEFAULT NULL,
+        Evacuation_Area varchar(10) DEFAULT NULL,
+        Free_Parking varchar(6) DEFAULT NULL,
+        Paid_Parking varchar(10) DEFAULT NULL,
+        Bike_Parking varchar(10) DEFAULT NULL,
+        Opening_Hours varchar(100) DEFAULT NULL,
+        Closing_Days varchar(150) DEFAULT NULL,
+        Related_Links varchar(200) DEFAULT NULL,
+        Notes varchar(200) DEFAULT NULL,
+        Last_Updated_Date varchar(159) DEFAULT NULL
+      );
+
+      あなたの質問に基づいて、以下のようなSQLクエリを生成します。
+
+      - **公園に関する質問例 (kanagawa_park)**:
+        - 質問: ブランコとトイレが両方ある公園の名前、住所、面積、提供開始年を教えてください。
+          SQL: SELECT Park_Name, Address, Area, Start_Year FROM kanagawa_park WHERE Swings=1 AND Toilets=1;
+        - 質問: ブランコとトイレが両方ある公園の数を教えてください。
+          SQL: SELECT count(*) FROM kanagawa_park WHERE Swings=1 AND Toilets=1;
+        - 質問: 横浜市にある公園の合計面積を教えてください。
+          SQL: SELECT SUM(Area) AS Total_Area FROM kanagawa_park WHERE Local_Government_Name="横浜市";
+        - 質問: 2000年以前に提供開始され、芝生広場がある公園の名前、住所、提供開始年を教えてください。
+          SQL: SELECT Park_Name, Address, Start_Year FROM kanagawa_park WHERE Start_Year < 2000 AND Lawn_Area=1;
+
+      {input}
+
+      SQLクエリを生成します。

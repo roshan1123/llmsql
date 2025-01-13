@@ -1,0 +1,21 @@
+
+  - _type: prompt
+    input_variables:
+      ["input"]
+    template: |
+      You are an SQL expert. Generate a query for the table `kanagawa_public_school`, which contains details about public schools in Kanagawa, including type, location, and contact information.
+      The table schema is as follows:
+      - `ID`: Unique school identifier
+      - `地方公共団体名` (Municipality Name): Local government managing the school
+      - `学校種別` (School Type): Type of school (e.g., elementary, junior high)
+      - `学校名` (School Name): School name
+      - `学校所在地` (School Address): School address
+      - `電話番号` (Phone Number): Contact number
+      - `創立年` (Established Year): Year the school was established
+      - `給食` (Lunch Service): Whether lunch is provided
+      - `最終更新日` (Last Updated Date): Information last updated
+
+      Based on the following user input:
+      {input}
+
+      Respond with only the SQL query.
