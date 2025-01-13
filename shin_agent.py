@@ -12,11 +12,11 @@ import re
 load_dotenv() 
 
 # Database connection parameters
-db_user = "root"
-db_password = ""
-db_host = "localhost"
-db_name = "Chinook"
-db_port = 3307
+db_user = os.environ["DB_USER"]
+db_password = os.environ["DB_PASSWORD"]
+db_host = os.environ["DB_HOST"]
+db_name = os.environ["DB_NAME"]
+db_port =os.environ["DB_PORT"]
 
 # Create SQLAlchemy engine
 engine = create_engine(f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}")
@@ -29,7 +29,6 @@ llm = GoogleGenerativeAI(model="gemini-pro", google_api_key=os.environ["GOOGLE_A
 k=20
 # Create SQL query chain
 chain = create_sql_query_chain(llm, db,prompt=None,k=20)
-
 
 def extract_column_names(sql_query):
     # Regular expression to match column names
