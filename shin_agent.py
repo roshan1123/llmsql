@@ -3,7 +3,7 @@ import streamlit as st
 from langchain.chains import create_sql_query_chain
 from langchain_google_genai import GoogleGenerativeAI
 from sqlalchemy import create_engine
-from sqlalchemy.exc import ProgrammingError
+from sqlalchemy.exc import ProgrammingError,OperationalError
 from langchain_community.utilities import SQLDatabase
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from dotenv import load_dotenv
@@ -20,6 +20,7 @@ db_port =os.environ["DB_PORT"]
 
 # Create SQLAlchemy engine
 engine = create_engine(f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}")
+
 
 # Initialize SQLDatabase
 db = SQLDatabase(engine, sample_rows_in_table_info=20)
@@ -62,7 +63,18 @@ def execute_query(question):
         # Return the query and the result
         return cleaned_query, result
     except ProgrammingError as e:
-        st.error(f"An error occurred: {e}")
+        print(f"An error occurred: {e}")
+        st.error(f"DataBase error occured while processing your query,Please try again with different query")
+        return None, None
+    
+    except OperationalError as e:        
+        print("An error occurred: {e}")
+        st.error(f"DataBase error occured while processing your query,Please try again with different query")
+        return None, None
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        st.error("An unexpected error occurred. Please try again later.")
         return None, None
 
 # Streamlit interface

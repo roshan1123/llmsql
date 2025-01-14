@@ -1,0 +1,118 @@
+2025-01-14 23:03:34,492 - ERROR - Database Connection Error: (sqlite3.OperationalError) no such table: employees
+[SQL: SELECT employees.id, employees.name, employees.position, employees.salary 
+FROM employees
+ LIMIT ? OFFSET ?]
+[parameters: (20, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-01-14 23:04:00,415 - ERROR - Database Connection Error: (sqlite3.OperationalError) no such table: employees
+[SQL: SELECT employees.id, employees.name, employees.position, employees.salary 
+FROM employees
+ LIMIT ? OFFSET ?]
+[parameters: (20, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-01-14 23:04:06,266 - ERROR - Database Connection Error: (sqlite3.OperationalError) no such table: employees
+[SQL: SELECT employees.id, employees.name, employees.position, employees.salary 
+FROM employees
+ LIMIT ? OFFSET ?]
+[parameters: (20, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-01-14 23:04:09,348 - ERROR - Database Connection Error: (sqlite3.OperationalError) no such table: employees
+[SQL: SELECT employees.id, employees.name, employees.position, employees.salary 
+FROM employees
+ LIMIT ? OFFSET ?]
+[parameters: (20, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-01-14 23:28:52,787 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:29:20,188 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:29:21,179 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:29:22,207 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:34:06,037 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:42:48,683 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:43:50,031 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:44:32,833 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:47:41,206 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:50:11,332 - ERROR - Unexpected Error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-01-14 23:57:24,223 - ERROR - Unexpected Error: 'str' object has no attribute 'fetchall'
+2025-01-14 23:59:40,227 - ERROR - Unexpected Error: 'str' object has no attribute 'fetchall'
+2025-01-15 00:00:12,255 - ERROR - Unexpected Error: 'str' object has no attribute 'fetchall'
+2025-01-15 00:01:37,684 - ERROR - Unexpected Error: DataFrame constructor not properly called!
